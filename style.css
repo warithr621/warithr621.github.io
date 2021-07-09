@@ -52,14 +52,6 @@ nav {
 	margin-bottom: 18px;
 }
 
-h1 {
-    font-family: "Merriweather",serif;
-    font-size: 2.8rem;
-    margin-top: 24px;
-    margin-bottom: 12px;
-    text-align: center;
-}
-
 header, main, footer {
 	display: block;
 }
@@ -99,4 +91,24 @@ row {
 
 container {
 	max-width: 960px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin-bottom: 0.5rem;
+	font-weight: 500;
+	line-height: 1.2;
+}
+
+h1 {
+	font-family: "Merriweather",serif;
+	font-size: 2.8rem;
+	margin-top: 24px;
+	margin-bottom: 12px;
+	text-align: center;
+}
+
+h2 {
+	font-family: "Merriweather",serif;
+	font-size: 1.8rem;
+	margin-top: 1.5rem;
 }
