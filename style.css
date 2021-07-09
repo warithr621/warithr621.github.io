@@ -44,47 +44,6 @@ body {
   background-color: #b114ff;
 }
 
-.center{
-	text-align: center;
-}
-
-.horizcenter{
-	position: relative;
-	left: 50%;
-  width: 10%;
-	transform: translateX(-50%);
-}
-
-.bothcenter{
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-}
-
-.vertcenter{
-	position: absolute;
-	top: 50%;
-	width: 100%;
-	transform: translateY(-60%);
-}
-
-.padded{
-	padding: 1vw;
-}
-
-.aquaback{
-	background: LightSkyBlue;
-}
-
-.grad1{
-	background: linear-gradient(to top left, Aqua, Lime);
-}
-
-.grad2{
-	background: linear-gradient(to bottom left, Lightcyan, Aquamarine);
-}
-
 nav {
 	display: flex;
 	justify-content: center;
