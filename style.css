@@ -1,1 +1,4 @@
-/*some code*/
+body {
+  background-color: #e6b5ff;
+  cursor: url(cursor.png), pointer;
+}
