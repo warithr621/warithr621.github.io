@@ -59,3 +59,18 @@ h1 {
     margin-bottom: 12px;
     text-align: center;
 }
+
+header, main, footer {
+	display: block;
+}
+
+main {
+	background-color: #fff;
+	border-top: 1px solid lightgrey;
+	border-bottom: 1px solid lightgrey;
+	padding-bottom: 40px;
+}
+
+footer {
+	padding: 24px;
+}
