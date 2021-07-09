@@ -96,3 +96,7 @@ row {
 	margin-right: -15px;
 	margin-left: -15px;
 }
+
+container {
+	max-width: 960px;
+}
