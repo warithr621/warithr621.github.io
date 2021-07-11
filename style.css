@@ -1,6 +1,5 @@
 body {
   background-color: #f8f9fa;
-  cursor: url(cursor.png), pointer;
 }
 
 nav {
@@ -33,7 +32,6 @@ a {
 nav>a {
 	margin: 0 8px;
 	border-bottom: 1px solid;
-	border-color: transparent;
 	transition: border-color 0.5s;
 }
 
