@@ -31,11 +31,11 @@ a {
 
 nav>a {
 	margin: 0 8px;
-	border-bottom: 1px solid;
 	transition: border-color 0.5s;
 }
 
 nav>a.active {
+	border-bottom: 1px solid;
 	border-color: inherit;
 }
 
