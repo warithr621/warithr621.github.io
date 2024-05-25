@@ -1,3 +1,3 @@
-# What is this?
+# warithr621.github.io
 
-Hi to anyone reading this! My name's Warith, and this is just a repository for my website :D
+Welcome to the repository for my personal website!
