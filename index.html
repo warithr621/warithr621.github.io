@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Warith Rahman — Dusk</title>
+  <title>Warith Rahman</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
   <style>
@@ -332,11 +332,48 @@
     .fade { opacity:0; transform:translateY(22px) scale(0.98); transition:opacity 0.65s ease,transform 0.65s cubic-bezier(.34,1.2,.64,1); }
     .fade.show { opacity:1; transform:none; }
 
+    /* ── Tablet ── */
     @media(max-width:768px){
-      .hero-row{grid-template-columns:1fr;}
-      .photo-wrap{width:100%;max-width:260px;margin:0 auto;}
-      .proj-grid{grid-template-columns:1fr;}
-      .ct-grid{grid-template-columns:1fr;}
+      /* Nav: hide text links, keep logo + GitHub */
+      nav { padding:0.75rem 1rem; }
+      .nav-pill { width:100%; border-radius:16px; justify-content:space-between; }
+      .nav-pill a:not(.nav-gh) { display:none; }
+      .nav-logo { padding:0.3rem 0.6rem; }
+
+      /* Hero */
+      .hero-row { grid-template-columns:1fr; gap:2rem; }
+      .hero-name { font-size:clamp(3rem,13vw,5rem); }
+      .photo-wrap { width:100%; max-width:240px; margin:0 auto; }
+
+      /* Grids */
+      .proj-grid { grid-template-columns:1fr; }
+      .ct-grid { grid-template-columns:1fr 1fr; }
+
+      /* Writing bullets — prevent the ✦ from orphaning */
+      .writing-card li { align-items:flex-start; }
+    }
+
+    /* ── Mobile ── */
+    @media(max-width:480px){
+      .container { padding:0 1.25rem; }
+      section { padding:2.5rem 0; }
+      #about { padding-top:6rem; }
+
+      .hero-name { font-size:clamp(2.75rem,14vw,4rem); letter-spacing:-0.04em; }
+      .bio p { font-size:0.95rem; }
+
+      /* Single-col experience cards already handled by auto-fill minmax */
+      .exp-grid { grid-template-columns:1fr; }
+
+      /* Contact fully single-col on small phones */
+      .ct-grid { grid-template-columns:1fr; }
+
+      /* Tighten exp card header so date chip doesn't clip */
+      .exp-top { flex-wrap:wrap; }
+      .date-chip { margin-top:0.15rem; }
+
+      /* Full-width resume button */
+      .btn { display:block; text-align:center; }
     }
   </style>
 </head>
@@ -378,7 +415,7 @@
               <span class="chip cg">Allen, TX → Austin, TX</span>
             </div>
             <div class="bio">
-              <p>Hi, I'm Warith! I graduated from Allen HS and am currently studying CS and Math at UT Austin. I competed in UIL (two state golds) and got deep into competitive programming, still participating via Codeforces, Leetcode, and UTPC. My main interests are cryptography and numerical analysis.</p>
+              <p>Hi, I'm Warith! I graduated from Allen HS and am currently studying CS and Math at UT Austin. During high school, my main extracurriculars were UIL Academics (two individual golds senior year!) and competitive programming (which I've carried into college via <a href="https://codeforces.com/profile/WalrusRamen21" target="_blank">Codeforces</a> and UTPC). My main interests are in cryptography and numerical analysis (as you can tell I'm a huge nerd when it comes to working with numbers).</p>
               <p>Outside of academics, I follow soccer and cricket a ton! I also play a lot of <a href="https://ch.tetr.io/u/walrusramen21" target="_blank">TETR.IO</a> (peaked Top 1.9K globally), and listen to a <i>lot</i> of <a href="https://open.spotify.com/playlist/2Cci3Weu5ldkeqCpkexjos?si=1760cd15a8014c99" target="_blank">K-pop</a>.</p>
             </div>
           </div>
