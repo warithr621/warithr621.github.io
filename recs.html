@@ -41,7 +41,8 @@
         <div class="mini-section">
           <div class="mini-section-header fade">
             <div class="sec-label"><span class="dot"></span> My favs</div>
-            <span class="mini-section-title">Songs I can't stop <span class="grad">thinking about</span></span>
+            <span class="mini-section-title"><span class="grad">Walrus</span> picks</span>
+            <p>A 20-song shortlist of what (I think) makes me, me :)</p>
           </div>
 
           <div class="card songs-card fade">
@@ -130,10 +131,12 @@
             else { cur += ch; }
           }
           cols.push(cur);
-          const [title, artist, spotify_id, cover_url, comment] = cols.map(c => c.trim());
+          const [title, artist, spotify_id, cover_id, comment] = cols.map(c => c.trim());
+          const clean_id = spotify_id.split('?')[0];
+          const cover_url = cover_id ? `https://i.scdn.co/image/${cover_id}` : '';
           const a = document.createElement('a');
           a.className = 'song-row';
-          a.href = `https://open.spotify.com/track/${spotify_id}`;
+          a.href = `https://open.spotify.com/track/${clean_id}`;
           a.target = '_blank';
           a.rel = 'noopener';
           a.innerHTML = `
