@@ -34,7 +34,7 @@
           <div class="sec-label"><span class="dot"></span> Music</div>
           <h1>K-Pop <span class="grad">Recs</span></h1>
           <p>I wanted a place to share some of the songs that really define who I am, both my music taste and I suppose my personality too.</p>
-          <p><i>P.S. There might be a lot of girl group music in this... :p</i></p>
+          <p><i>P.S. There might be a lot of girl group music in this... as you can tell by my <a href="https://open.spotify.com/playlist/2Cci3Weu5ldkeqCpkexjos?si=1760cd15a8014c99" target="_blank">actual playlist</a></i>.</p>
         </div>
 
         <!-- ── Personal Top Songs ── -->
@@ -45,64 +45,7 @@
           </div>
 
           <div class="card songs-card fade">
-          <div class="songs-scroll">
-            <div class="song-row">
-              <div class="song-rank">01</div> <!-- generic flavortext -->
-              <div class="song-info">
-                <div class="song-title">[Song Title]</div>
-                <div class="song-artist">[Artist]</div>
-              </div>
-              <div class="song-comment">[What draws you to this song — a lyric, a feeling, a memory it brings back]</div>
-            </div>
-            <div class="song-row">
-              <div class="song-rank">02</div>
-              <div class="song-info">
-                <div class="song-title">[Song Title]</div>
-                <div class="song-artist">[Artist]</div>
-              </div>
-              <div class="song-comment">[Your personal take on this one — what makes it stick]</div>
-            </div>
-            <div class="song-row">
-              <div class="song-rank">03</div>
-              <div class="song-info">
-                <div class="song-title">[Song Title]</div>
-                <div class="song-artist">[Artist]</div>
-              </div>
-              <div class="song-comment">[Why this one hits different for you]</div>
-            </div>
-            <div class="song-row">
-              <div class="song-rank">04</div>
-              <div class="song-info">
-                <div class="song-title">[Song Title]</div>
-                <div class="song-artist">[Artist]</div>
-              </div>
-              <div class="song-comment">[Something about the production, lyrics, or mood that gets you]</div>
-            </div>
-            <div class="song-row">
-              <div class="song-rank">05</div>
-              <div class="song-info">
-                <div class="song-title">[Song Title]</div>
-                <div class="song-artist">[Artist]</div>
-              </div>
-              <div class="song-comment">[A short, genuine thought about this track]</div>
-            </div>
-            <div class="song-row">
-              <div class="song-rank">06</div>
-              <div class="song-info">
-                <div class="song-title">[Song Title]</div>
-                <div class="song-artist">[Artist]</div>
-              </div>
-              <div class="song-comment">[What makes this one special to you]</div>
-            </div>
-            <div class="song-row">
-              <div class="song-rank">07</div>
-              <div class="song-info">
-                <div class="song-title">[Song Title]</div>
-                <div class="song-artist">[Artist]</div>
-              </div>
-              <div class="song-comment">[A line, a feeling, anything — make it yours]</div>
-            </div>
-          </div>
+            <div class="songs-scroll" id="songs-list"></div>
           </div>
         </div>
 
@@ -111,7 +54,7 @@
           <div class="mini-section-header fade">
             <div class="sec-label"><span class="dot"></span> By genre</div>
             <span class="mini-section-title">Playlists <span class="grad">by mood</span></span>
-            <p>In case you don't trust my word above, at least trust my sense of genre in the playlists below :)</p>
+            <p>In case you want a more tailored listening experience :)</p>
           </div>
 
           <div class="playlists">
@@ -171,6 +114,39 @@
       `;
       sf.appendChild(s);
     }
+
+    fetch('songs.csv')
+      .then(r => r.text())
+      .then(text => {
+        const lines = text.trim().split('\n').slice(1); // skip header
+        const list = document.getElementById('songs-list');
+        lines.forEach(line => {
+          // handle quoted fields containing commas
+          const cols = [];
+          let cur = '', inQ = false;
+          for (const ch of line) {
+            if (ch === '"') { inQ = !inQ; }
+            else if (ch === ',' && !inQ) { cols.push(cur); cur = ''; }
+            else { cur += ch; }
+          }
+          cols.push(cur);
+          const [title, artist, spotify_id, cover_url, comment] = cols.map(c => c.trim());
+          const a = document.createElement('a');
+          a.className = 'song-row';
+          a.href = `https://open.spotify.com/track/${spotify_id}`;
+          a.target = '_blank';
+          a.rel = 'noopener';
+          a.innerHTML = `
+            <img class="song-cover" src="${cover_url}" alt="${title} cover" loading="lazy">
+            <div class="song-info">
+              <div class="song-title">${title}</div>
+              <div class="song-artist">${artist}</div>
+            </div>
+            <div class="song-comment">${comment}</div>
+          `;
+          list.appendChild(a);
+        });
+      });
 
     const els = document.querySelectorAll('.fade');
     const io = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){ x.target.classList.add('show'); io.unobserve(x.target); }}), {threshold:.08});

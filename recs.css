@@ -24,6 +24,8 @@
   max-width: 560px;
   margin: 0 auto;
 }
+.recs-hero a { color: var(--purple); font-weight: 700; text-decoration: none; }
+.recs-hero a:hover { color: var(--pink); }
 
 /* ── Mini section wrappers ── */
 .mini-section { margin-top: 3rem; margin-bottom: 3.5rem; }
@@ -86,23 +88,18 @@
 }
 .song-row:hover::before { opacity: 1; }
 
-.song-rank {
+a.song-row { color: inherit; text-decoration: none; display: grid; }
+
+.song-cover {
   width: 2.65rem; height: 2.65rem;
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
+  border-radius: 8px;
+  object-fit: cover;
   flex-shrink: 0;
-  font-size: 0.7rem; font-weight: 900;
-  letter-spacing: 0.02em;
-  background: rgba(196,181,253,0.09);
   border: 1px solid var(--border);
-  color: var(--purple);
-  transition: background 0.2s, border-color 0.2s, color 0.2s;
+  transition: border-color 0.2s;
+  background: rgba(196,181,253,0.09);
 }
-.song-row:hover .song-rank {
-  background: linear-gradient(135deg, rgba(196,181,253,0.18), rgba(249,168,212,0.1));
-  border-color: var(--border-h);
-  color: var(--pink);
-}
+.song-row:hover .song-cover { border-color: var(--border-h); }
 
 .song-info { min-width: 0; }
 .song-title {
@@ -175,7 +172,7 @@
     row-gap: 0.4rem;
     column-gap: 0.9rem;
   }
-  .song-rank {
+  .song-cover {
     grid-row: 1 / 3;
     align-self: start;
     margin-top: 0.2rem;
