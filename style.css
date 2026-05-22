@@ -357,8 +357,6 @@ footer {
   border-top:1px solid var(--border);
 }
 
-.fade { opacity:0; transform:translateY(22px) scale(0.98); transition:opacity 0.65s ease,transform 0.65s cubic-bezier(.34,1.2,.64,1); }
-.fade.show { opacity:1; transform:none; }
 
 /* ── Tablet ── */
 @media(max-width:768px){
