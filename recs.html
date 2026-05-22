@@ -5,9 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>K-Pop Recs — Warith Rahman</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700;800&family=Inter:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="recs.css">
+  <style>
+    .recs-hi { color: #E879F9 !important; -webkit-text-fill-color: #E879F9 !important; background: none !important; }
+  </style>
 </head>
 <body>
   <div class="stars" id="stars"></div>
@@ -31,8 +40,7 @@
       <div class="container">
 
         <div class="recs-hero fade">
-          <div class="sec-label"><span class="dot"></span> Music</div>
-          <h1>K-Pop <span class="grad">Recs</span></h1>
+          <h1>K-Pop <span class="recs-hi">Recs</span></h1>
           <p>I wanted a place to share some of the songs that really define who I am, both my music taste and I suppose my personality too.</p>
           <p><i>P.S. There might be a lot of girl group music in this... as you can tell by my <a href="https://open.spotify.com/playlist/2Cci3Weu5ldkeqCpkexjos?si=1760cd15a8014c99" target="_blank">actual playlist</a></i>.</p>
         </div>
@@ -40,11 +48,10 @@
         <!-- ── Personal Top Songs ── -->
         <div class="mini-section">
           <div class="mini-section-header fade">
-            <div class="sec-label"><span class="dot"></span> My favs</div>
-            <span class="mini-section-title"><span class="grad">Walrus</span> picks</span>
+            <span class="mini-section-title"><span class="recs-hi">Walrus</span> picks</span>
             <p>A 20-song shortlist of what (I think) makes me, me :)</p>
           </div>
-          <p><i>I've been told there's some recency bias in this... oops</i></p>
+          <p><i>I've been told there's some recency bias in this... oops. Anyway, this list is chronologically sorted.</i></p>
 
           <div class="card songs-card fade">
             <div class="songs-scroll" id="songs-list"></div>
@@ -54,8 +61,7 @@
         <!-- ── Genre Playlists ── -->
         <div class="mini-section">
           <div class="mini-section-header fade">
-            <div class="sec-label"><span class="dot"></span> By genre</div>
-            <span class="mini-section-title">Playlists <span class="grad">by mood</span></span>
+            <span class="mini-section-title">Playlists <span class="recs-hi">by mood</span></span>
             <p>In case you want a more tailored listening experience :)</p>
           </div>
 
@@ -117,7 +123,7 @@
       sf.appendChild(s);
     }
 
-    fetch('songs.csv')
+    fetch('songs.csv', { cache: 'no-cache' })
       .then(r => r.text())
       .then(text => {
         const lines = text.trim().split('\n').slice(1); // skip header
