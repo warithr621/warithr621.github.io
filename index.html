@@ -79,7 +79,7 @@
           <ul>
             <li><strong>Science Olympiad (2026–Present):</strong> Sole writer of the 2026 ATX Regionals Machines test (Div. B &amp; C)</li>
             <li><strong>UTPC (2025–Present):</strong> Write competitive programming problems for UT's bi-weekly contests</li>
-            <li><strong>Science Bowl (2024–Present):</strong> Co-wrote RR physics (2025) and DE math (2026) for <a href="https://texassciencebowl.org/" target="_blank">Texas Science Bowl</a></li>
+            <li><strong>Science Bowl (2024–Present):</strong> Wrote RR physics (2025), DE math (2026), RR physics + DE math + ML (2027) for Texas Science Bowl</li>
             <li><strong>High School TMSCA (2024–Present):</strong> Write the physics section for TMSCA science tests, including the UT San Antonio state meet</li>
             <li><strong>Allen Aspire (2022–2024):</strong> Wrote middle school TMSCA tests; sole writer of the Number Sense contest</li>
           </ul>
@@ -127,11 +127,10 @@
   <footer>Made by Warith Rahman via GitHub (and some Claude UI assistance 😁)</footer>
 
   <script>
-    /* JS MODIFICATION: three discrete size tiers and opacity tiers for astronomical depth */
     const STAR_SIZES = [1, 1.5, 2];
     const STAR_OPS   = [0.4, 0.65, 0.9];
     const sf = document.getElementById('stars');
-    for(let i = 0; i < 140; i++){
+    for(let i = 0; i < 300; i++){
       const s = document.createElement('div');
       s.className = 'star';
       const size = STAR_SIZES[Math.floor(Math.random() * 3)];

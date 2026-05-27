@@ -108,16 +108,19 @@
   <footer>Made by Warith Rahman via GitHub (and some Claude UI assistance 😁)</footer>
 
   <script>
+    const STAR_SIZES = [1, 1.5, 2];
+    const STAR_OPS   = [0.4, 0.65, 0.9];
     const sf = document.getElementById('stars');
-    for(let i = 0; i < 120; i++){
+    for(let i = 0; i < 300; i++){
       const s = document.createElement('div');
       s.className = 'star';
-      const size = Math.random() * 2 + 0.5;
+      const size = STAR_SIZES[Math.floor(Math.random() * 3)];
+      const op   = STAR_OPS[Math.floor(Math.random() * 3)];
       s.style.cssText = `
         width:${size}px; height:${size}px;
         top:${Math.random()*100}%; left:${Math.random()*100}%;
         --d:${2+Math.random()*4}s;
-        --op:${0.3+Math.random()*0.6};
+        --op:${op};
         animation-delay:${Math.random()*5}s;
       `;
       sf.appendChild(s);
