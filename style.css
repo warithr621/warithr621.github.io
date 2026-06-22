@@ -131,10 +131,10 @@ nav {
 /* ── Page ── */
 .page { position:relative; z-index:1; }
 .container { max-width:1100px; margin:0 auto; padding:0 2rem; }
-section { padding:4rem 0; }
-#about { padding-top:10rem; padding-bottom:6rem; }
-#experience { padding-top:5rem; padding-bottom:3.5rem; }
-#projects { padding-top:5rem; padding-bottom:4rem; }
+section { padding:3rem 0; }
+#about { padding-top:10rem; padding-bottom:3rem; }
+#experience { padding-top:3rem; padding-bottom:3rem; }
+#projects { padding-top:3rem; padding-bottom:3rem; }
 
 /* ── Star-map section labels ── */
 #experience .container > h2::before { content: '// EXPERIENCE'; }
@@ -378,10 +378,10 @@ footer {
 /* ── Mobile ── */
 @media(max-width:480px){
   .container { padding:0 1.25rem; }
-  section { padding:2.5rem 0; }
-  #about { padding-top:6rem; padding-bottom:3rem; }
-  #experience { padding-top:3rem; padding-bottom:2.5rem; }
-  #projects { padding-top:3rem; }
+  section { padding:2rem 0; }
+  #about { padding-top:6rem; padding-bottom:2rem; }
+  #experience { padding-top:2rem; padding-bottom:2rem; }
+  #projects { padding-top:2rem; }
 
   .hero-name { font-size:clamp(2.75rem,14vw,4rem); letter-spacing:-0.03em; }
   .bio p { font-size:0.95rem; }
