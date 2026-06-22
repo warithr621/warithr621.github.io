@@ -41,28 +41,16 @@
 
         <div class="recs-hero fade">
           <h1>K-Pop <span class="recs-hi">Recs</span></h1>
-          <p>I wanted a place to share some of the songs that really define who I am, both my music taste and I suppose my personality too.</p>
-          <p><i>P.S. There might be a lot of girl group music in this... as you can tell by my <a href="https://open.spotify.com/playlist/2Cci3Weu5ldkeqCpkexjos?si=1760cd15a8014c99" target="_blank">actual playlist</a></i>.</p>
-        </div>
-
-        <!-- ── Personal Top Songs ── -->
-        <div class="mini-section">
-          <div class="mini-section-header fade">
-            <span class="mini-section-title"><span class="recs-hi">Walrus</span> picks</span>
-            <p>A 20-song shortlist of what (I think) makes me, me :)</p>
-          </div>
-          <p><i>I've been told there's some recency bias in this... oops. Anyway, this list is chronologically sorted.</i></p>
-
-          <div class="card songs-card fade">
-            <div class="songs-scroll" id="songs-list"></div>
-          </div>
+          <p>WE yes WE are getting hooked onto K-pop</p>
+          <p>Also uh there might be a lot of girl group music in this, as you can tell by my <a href="https://open.spotify.com/playlist/2Cci3Weu5ldkeqCpkexjos?si=1760cd15a8014c99" target="_blank">actual playlist</a>.</p>
         </div>
 
         <!-- ── Genre Playlists ── -->
         <div class="mini-section">
           <div class="mini-section-header fade">
             <span class="mini-section-title">Playlists <span class="recs-hi">by mood</span></span>
-            <p>In case you want a more tailored listening experience :)</p>
+            <p>for a tailored listening experience :)</p>
+            <p class="mini-section-ps">P.S. <i>please</i> give me suggestions if you have any...</p>
           </div>
 
           <div class="playlists">
@@ -126,41 +114,7 @@
       sf.appendChild(s);
     }
 
-    fetch('songs.csv', { cache: 'no-cache' })
-      .then(r => r.text())
-      .then(text => {
-        const lines = text.trim().split('\n').slice(1); // skip header
-        const list = document.getElementById('songs-list');
-        lines.forEach(line => {
-          // handle quoted fields containing commas
-          const cols = [];
-          let cur = '', inQ = false;
-          for (const ch of line) {
-            if (ch === '"') { inQ = !inQ; }
-            else if (ch === ',' && !inQ) { cols.push(cur); cur = ''; }
-            else { cur += ch; }
-          }
-          cols.push(cur);
-          const [title, artist, spotify_id, cover_id, comment] = cols.map(c => c.trim());
-          const clean_id = spotify_id.split('?')[0];
-          const cover_url = cover_id ? `https://i.scdn.co/image/${cover_id}` : '';
-          const a = document.createElement('a');
-          a.className = 'song-row';
-          a.href = `https://open.spotify.com/track/${clean_id}`;
-          a.target = '_blank';
-          a.rel = 'noopener';
-          a.innerHTML = `
-            <img class="song-cover" src="${cover_url}" alt="${title} cover" loading="lazy">
-            <div class="song-info">
-              <div class="song-title">${title}</div>
-              <div class="song-artist">${artist}</div>
-            </div>
-            <div class="song-comment">${comment}</div>
-          `;
-          list.appendChild(a);
-        });
-      });
 
-  </script>
+</script>
 </body>
 </html>

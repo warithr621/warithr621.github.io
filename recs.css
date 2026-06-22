@@ -61,72 +61,21 @@
 .recs-hero a:hover { opacity:0.75; }
 
 /* ── Mini section wrappers ── */
-.mini-section { margin-top:3rem; margin-bottom:3.5rem; }
+.mini-section { margin-top:2rem; margin-bottom:2.5rem; }
 .mini-section-header {
   display:flex; align-items:center; gap:1rem;
   margin-bottom:1.5rem; flex-wrap:wrap;
 }
 .mini-section-header .sec-label { margin-bottom:0; }
+.mini-section-ps { flex-basis:100%; }
 .mini-section-title {
   font-family:'Space Grotesk', sans-serif;
   font-size:1.35rem; font-weight:700;
   letter-spacing:-0.02em; color:var(--text);
 }
 
-/* ── Songs list ── */
-.songs-card { padding:0.25rem 0; overflow:hidden; }
-.songs-scroll {
-  max-height:calc(5 * 4.55rem);
-  overflow-y:auto;
-  scrollbar-width:thin;
-  scrollbar-color:rgba(232,121,249,0.25) transparent;
-}
-.songs-scroll::-webkit-scrollbar { width:4px; }
-.songs-scroll::-webkit-scrollbar-track { background:transparent; }
-.songs-scroll::-webkit-scrollbar-thumb { background:rgba(232,121,249,0.25); border-radius:4px; }
-.songs-scroll::-webkit-scrollbar-thumb:hover { background:rgba(232,121,249,0.45); }
-
-.song-row {
-  display:grid;
-  grid-template-columns:3rem minmax(0,1fr) minmax(0,2fr);
-  align-items:center;
-  gap:1rem 1.25rem;
-  padding:1.05rem 1.5rem;
-  border-bottom:1px solid var(--border);
-  position:relative;
-  transition:background 0.2s;
-}
-.song-row:last-child { border-bottom:none; }
-.song-row:hover { background:rgba(232,121,249,0.04); }
-.song-row::before {
-  content:'';
-  position:absolute;
-  left:0; top:0; bottom:0;
-  width:2px;
-  background:var(--accent);
-  opacity:0;
-  transition:opacity 0.2s;
-}
-.song-row:hover::before { opacity:1; }
-
-a.song-row { color:inherit; text-decoration:none; display:grid; }
-
-.song-cover {
-  width:2.65rem; height:2.65rem;
-  border-radius:6px; object-fit:cover; flex-shrink:0;
-  border:1px solid var(--border);
-  transition:border-color 0.15s;
-  background:rgba(232,121,249,0.07);
-}
-.song-row:hover .song-cover { border-color:var(--border-h); }
-
-.song-info { min-width:0; }
-.song-title { font-size:0.94rem; font-weight:700; color:var(--text); line-height:1.3; }
-.song-artist { font-size:0.77rem; font-weight:500; color:var(--accent); margin-top:0.2rem; }
-.song-comment { font-size:0.8rem; font-style:italic; color:var(--muted); line-height:1.6; }
-
 /* ── Genre playlists ── */
-.playlists { display:grid; grid-template-columns:1fr 1fr; gap:1.4rem; margin-bottom:4rem; }
+.playlists { display:grid; grid-template-columns:1fr 1fr; gap:1.4rem; margin-bottom:3rem; }
 .playlist-card { padding:1.25rem; }
 .playlist-card iframe { border-radius:10px; width:100%; border:none; display:block; }
 
@@ -136,13 +85,7 @@ a.song-row { color:inherit; text-decoration:none; display:grid; }
   .back-link { font-size:0.76rem; padding:0.3rem 0.65rem; gap:0.35rem; }
   .playlists { grid-template-columns:1fr; }
 
-  .song-row {
-    grid-template-columns:2.65rem 1fr;
-    grid-template-rows:auto auto;
-    row-gap:0.4rem; column-gap:0.9rem;
-  }
-  .song-cover { grid-row:1/3; align-self:start; margin-top:0.2rem; }
-  .song-comment { grid-column:2; text-align:left; }
+
 }
 
 @media(max-width:480px) {
