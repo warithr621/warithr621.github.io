@@ -240,7 +240,7 @@ h2 .grad {
 /* ── EXPERIENCE ── */
 .exp-grid {
   display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(245px,1fr));
+  grid-template-columns:repeat(3,1fr);
   gap:1.1rem; margin-bottom:2.5rem;
 }
 .exp-card { padding:1.5rem; display:flex; flex-direction:column; }
@@ -371,6 +371,7 @@ footer {
   .hero-name { font-size:clamp(3rem,13vw,5rem); }
   .photo-wrap { width:100%; max-width:240px; margin:0 auto; }
 
+  .exp-grid { grid-template-columns:1fr 1fr; }
   .proj-grid { grid-template-columns:1fr; }
   .ct-grid { grid-template-columns:1fr 1fr; }
 
