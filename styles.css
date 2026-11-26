@@ -73,3 +73,39 @@ footer { text-align: center; }
 .header-container h1, .header-container p {
 	margin: 0;
 }
+
+h2 { font-size: 1.2em; font-weight: normal; margin: 1em 0 0.5em; }
+
+.ranking summary { cursor: pointer; color: #C4A7FF; }
+
+.pyramid-scroll { overflow-x: auto; margin-top: 16px; padding-bottom: 8px; scrollbar-color: rgba(196, 167, 255, 0.35) transparent; }
+
+/* as wide as the widest row (or the page), so short rows centre over it */
+.pyramid { width: max-content; min-width: 100%; }
+
+.tier {
+	display: flex;
+	justify-content: center;
+	gap: 6px;
+	margin-bottom: 6px;
+}
+
+.tile {
+	flex: none;
+	width: 110px;
+	padding: 6px 4px;
+	box-sizing: border-box;
+	border: 1px solid rgba(196, 167, 255, 0.35);
+	border-radius: 8px;
+	font-size: 0.75em;
+	line-height: 1.25;
+	text-align: center;
+}
+
+.tile.tinted {
+	background: hsl(var(--h) 70% 65% / 0.12);
+	border-color: hsl(var(--h) 70% 70% / 0.45);
+}
+
+.tile .rank { display: block; opacity: 0.5; }
+.tile .album { display: block; margin-top: 2px; font-size: 0.85em; opacity: 0.6; }
