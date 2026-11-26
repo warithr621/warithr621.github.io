@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
+
+body {
+	background: #080B14;
+	color: #fff;
+	font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", "Chalkboard SE", sans-serif;
+	line-height: 1.6;
+}
+
+a { color: #C4A7FF; text-decoration: none;}
+
+main {
+	position: relative;
+	max-width: 750px;
+	margin: 0 auto;
+	padding: 80px 24px;
+}
+
+h1 { font-size: 1.5em; font-weight: normal; margin: 0 0 1em; }
+
+.stars { position: fixed; inset: 0; overflow: hidden; }
+
+.star {
+	position: absolute;
+	background: #fff;
+	border-radius: 50%;
+	animation: twinkle var(--d) ease-in-out infinite;
+	opacity: 0;
+}
+
+@keyframes twinkle {
+	50% { opacity: var(--op); }
+}
+
+.playlists { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+.playlists iframe { width: 100%; border: none; border-radius: 12px; }
+
+.concerts {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 24px 16px;
+	margin-top: 24px;
+}
+
+.concert { margin: 0; }
+
+.concert img {
+	display: block;
+	width: 100%;
+	aspect-ratio: 4 / 3;
+	object-fit: cover;
+	border-radius: 12px;
+}
+
+.concert figcaption {
+	margin-top: 8px;
+	text-align: center;
+}
+
+@media (max-width: 768px) {
+	.playlists, .concerts { grid-template-columns: 1fr; }
+}
+
+.header-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.header-container h1, .header-container p {
+	margin: 0;
+}

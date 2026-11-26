@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>walrus' kpop</title>
+	<link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+	<link rel="manifest" href="favicon/site.webmanifest">
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<div class="stars" id="stars"></div>
+
+	<main>
+		<div class="header-container">
+			<h1>kpop and stuff</h1>
+			<p><a href="./">&larr; go back</a></p>
+		</div>
+		<p>hi i listen to a lot of kpop if you couldn't tell already, and if you're here i either yelled at you to look here or you're goated.</p>
+		<p>if you wanna see my super fat kpop playlist you can look <a href="https://open.spotify.com/playlist/2Cci3Weu5ldkeqCpkexjos">here</a>. of course i also have these playlists below that are more "genre"-sorted, since I wanted an easy way to give friends recs without having to think about catering to an individual person.</p>
+		<div class="playlists">
+			<iframe
+				src="https://open.spotify.com/embed/playlist/35KKPjIM97BfTlMQV7C69e?utm_source=generator&theme=0"
+				height="152"
+				allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+				loading="lazy"
+			></iframe>
+			<iframe
+				src="https://open.spotify.com/embed/playlist/0hHkRnvwEYMWeXqnucltPr?utm_source=generator&theme=0"
+				height="152"
+				allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+				loading="lazy"
+			></iframe>
+			<iframe
+				src="https://open.spotify.com/embed/playlist/4dJtCyKBDsTCpxTZR0M8f6?utm_source=generator&theme=0"
+				height="152"
+				allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+				loading="lazy"
+			></iframe>
+			<iframe
+				src="https://open.spotify.com/embed/playlist/1eJRiiAXhKZbTP3vY1afCd?utm_source=generator&theme=0"
+				height="152"
+				allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+				loading="lazy"
+			></iframe>
+		</div>
+
+		<p>i have also recently developed a crippling concert addiction... here's a catalog thus far</p>
+
+		<div class="concerts">
+			<figure class="concert">
+				<img src="concerts/twice2026.JPG" loading="lazy">
+				<figcaption>TWICE: 4/17/26 ("This Is For" @ Moody Center)</figcaption>
+			</figure>
+			<figure class="concert">
+				<img src="concerts/puth2026.PNG" loading="lazy">
+				<figcaption>Charlie Puth: 6/11/26 ("Whatever's Clever" @ Moody Center)<br>[ig this isnt kpop... oh well]</figcaption>
+			</figure>
+			<figure class="concert">
+				<img src="concerts/ive2026.JPG" loading="lazy">
+				<figcaption>IVE: 7/29/26 ("Show What I Am" @ Moody Center)</figcaption>
+			</figure>
+			<figure class="concert">
+				<img src="concerts/aespa2026.JPG" loading="lazy">
+				<figcaption>aespa: 9/29/26 ("Synk: Complæxity" @ American Airlines Center)</figcaption>
+			</figure>
+			
+		</div>
+	</main>
+
+	<script>
+		const STAR_SIZES = [1, 1.5, 2];
+		const STAR_OPS   = [0.4, 0.65, 0.9];
+		const sf = document.getElementById('stars');
+		for(let i = 0; i < 500; i++){
+			const s = document.createElement('div');
+			s.className = 'star';
+			const size = STAR_SIZES[Math.floor(Math.random() * 3)];
+			const op   = STAR_OPS[Math.floor(Math.random() * 3)];
+			s.style.cssText = `
+				width:${size}px; height:${size}px;
+				top:${Math.random()*100}%; left:${Math.random()*100}%;
+				--d:${2+Math.random()*4}s;
+				--op:${op};
+				animation-delay:${Math.random()*5}s;
+			`;
+			sf.appendChild(s);
+		}
+	</script>
+</body>
+</html>
+
