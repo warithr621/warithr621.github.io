@@ -111,3 +111,22 @@ h2 { font-size: 1.2em; font-weight: normal; margin: 1em 0 0.5em; }
 
 .tile .rank { display: block; opacity: 0.5; }
 .tile .album { display: block; margin-top: 2px; font-size: 0.85em; opacity: 0.6; }
+
+.flow-scroll { overflow-x: auto; padding-bottom: 8px; scrollbar-color: rgba(196, 167, 255, 0.35) transparent; }
+
+/* label column, then semester / arrow / semester / ... */
+.flow {
+	display: grid;
+	grid-template-columns: auto 1fr 14px 1fr 14px 1fr 14px 1fr 14px 1fr;
+	gap: 14px 6px;
+	min-width: 640px;
+	align-items: center;
+}
+
+.flow .sem { font-size: 0.75em; text-align: center; opacity: 0.6; }
+.flow .label { padding-right: 6px; }
+.flow .arrow { text-align: center; opacity: 0.5; }
+.flow .cell { display: flex; flex-direction: column; gap: 6px; }
+.flow .tile { width: 100%; }
+.flow .tile .code { display: block; font-weight: bold; }
+.flow .tile.planned { border-style: dashed; }

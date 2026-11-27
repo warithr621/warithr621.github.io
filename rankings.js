@@ -1,7 +1,3 @@
-// song rankings for kpop.html: each list is in rank order (index 0 = #1),
-// TIERS gives the number of tiles per pyramid row, and ALBUM_HUES maps
-// album -> hue for a light tint (albums not listed stay untinted)
-
 const IVE_SONGS = [
 	["ATTITUDE", "IVE EMPATHY"],
 	["After LIKE", "After LIKE"],
